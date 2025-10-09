@@ -1,25 +1,51 @@
 package client;
 
-import domain.Money;
-import finance.FinancialValue;
-import finance.MoneyAdapter;
-import java.math.BigDecimal;
+import delivery.DeliveryChannel;
+import delivery.EmailSender;
+import delivery.Printer;
+import report.FinancialReport;
+import report.Report;
+import report.TechnicalReport;
 
-class Main {
+
+public class Main {
     public static void main(String[] args) {
 
-        Money euroAmount = new Money(new BigDecimal("1234.56"), "EUR");
-        Money usdAmount = new Money(new BigDecimal("500.00"), "USD");
+        // --- Setup Implementors (Delivery Channels) ---
+        // We can create concrete implementations independently
+        DeliveryChannel emailChannel = new EmailSender("ceo@company.com");
+        DeliveryChannel printerChannel = new Printer("HQ_LaserJet_P500");
 
-        FinancialValue adaptedEuro = new MoneyAdapter(euroAmount);
-        FinancialValue adaptedUSD = new MoneyAdapter(usdAmount);
+        System.out.println("");
 
-        PaymentProcessor processor = new PaymentProcessor();
+        // --- Scenario 1: Financial Report delivered via Email ---
+        System.out.println("==================================================");
+        Report q4Financials = new FinancialReport(
+                "Q4 2024 Earnings Summary",
+                emailChannel, // Bridge established here
+                2024
+        );
+        q4Financials.generateAndDeliver();
 
-        System.out.println("Processing Euro Payment:");
-        processor.processPayment(adaptedEuro);
+        // --- Scenario 2: Technical Report delivered via Printer ---
+        System.out.println("==================================================");
+        Report productionMetrics = new TechnicalReport(
+                "Monthly Production Metrics",
+                printerChannel, // Bridge established here
+                "Phoenix_Platform"
+        );
+        productionMetrics.generateAndDeliver();
 
-        System.out.println("\nProcessing USD Payment:");
-        processor.processPayment(adaptedUSD);
+        // --- Scenario 3: Same Report Type, Different Delivery Channel ---
+        System.out.println("==================================================");
+        System.out.println("Re-sending Technical Report via Email:");
+        // Re-use the TechnicalReport type, but swap the Implementor
+        Report emailMetrics = new TechnicalReport(
+                "Monthly Production Metrics (Email Copy)",
+                emailChannel, // New Bridge connection
+                "Phoenix_Platform"
+        );
+        emailMetrics.generateAndDeliver();
+        System.out.println("==================================================");
     }
 }
