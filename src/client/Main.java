@@ -21,9 +21,9 @@ public class Main {
         // --- Scenario 1: Financial Report delivered via Email ---
         System.out.println("==================================================");
         Report q4Financials = new FinancialReport(
-                "Q4 2024 Earnings Summary",
+                "Q3 2025 Earnings Summary",
                 emailChannel, // Bridge established here
-                2024
+                2025
         );
         q4Financials.generateAndDeliver();
 
