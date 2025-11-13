@@ -4,7 +4,7 @@ import com.financialreport.elements.Revenue;
 import com.financialreport.elements.Expense;
 import com.financialreport.elements.Investment;
 
-public interface FinancialVisitor {
+public interface IFinancialVisitor {
     void visit(Revenue revenue);
 
     void visit(Expense expense);

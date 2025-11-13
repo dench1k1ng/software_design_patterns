@@ -4,7 +4,7 @@ import com.financialreport.elements.Revenue;
 import com.financialreport.elements.Expense;
 import com.financialreport.elements.Investment;
 
-public class TaxCalculator implements FinancialVisitor {
+public class TaxCalculator implements IFinancialVisitor {
 
     private static final double REVENUE_TAX_RATE = 0.15;
     private static final double EXPENSE_DEDUCTION_RATE = 0.05;

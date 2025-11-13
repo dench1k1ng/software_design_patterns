@@ -1,6 +1,6 @@
 package com.financialreport.elements;
 
-import com.financialreport.visitors.FinancialVisitor;
+import com.financialreport.visitors.IFinancialVisitor;
 
 public class Investment implements FinancialElement {
 
@@ -28,7 +28,7 @@ public class Investment implements FinancialElement {
     }
 
     @Override
-    public void accept(FinancialVisitor visitor) {
+    public void accept(IFinancialVisitor visitor) {
         visitor.visit(this);
     }
 

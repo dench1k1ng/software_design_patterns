@@ -60,7 +60,7 @@ public class FinancialReportDemo {
         }
     }
 
-    private static void applyVisitor(List<FinancialElement> elements, FinancialVisitor visitor) {
+    private static void applyVisitor(List<FinancialElement> elements, IFinancialVisitor visitor) {
         for (FinancialElement element : elements) {
             element.accept(visitor);
         }
@@ -110,7 +110,7 @@ public class FinancialReportDemo {
                 counter.getCount());
     }
 
-    private static class SimpleCounterVisitor implements FinancialVisitor {
+    private static class SimpleCounterVisitor implements IFinancialVisitor {
         private int count = 0;
 
         @Override

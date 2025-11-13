@@ -4,7 +4,7 @@ import com.financialreport.elements.Revenue;
 import com.financialreport.elements.Expense;
 import com.financialreport.elements.Investment;
 
-public class ReportGenerator implements FinancialVisitor {
+public class ReportGenerator implements IFinancialVisitor {
 
     private final StringBuilder reportOutput;
 

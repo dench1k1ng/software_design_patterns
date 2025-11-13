@@ -1,7 +1,7 @@
 package com.financialreport.elements;
 
-import com.financialreport.visitors.FinancialVisitor;
+import com.financialreport.visitors.IFinancialVisitor;
 
 public interface FinancialElement {
-    void accept(FinancialVisitor visitor);
+    void accept(IFinancialVisitor visitor);
 }
