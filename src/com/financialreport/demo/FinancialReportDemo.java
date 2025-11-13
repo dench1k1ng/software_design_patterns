@@ -1,6 +1,7 @@
 package com.financialreport.demo;
 
 import com.financialreport.elements.*;
+import com.financialreport.interfaces.IFinancialVisitor;
 import com.financialreport.visitors.*;
 import java.util.ArrayList;
 import java.util.List;

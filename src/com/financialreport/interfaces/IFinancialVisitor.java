@@ -1,4 +1,4 @@
-package com.financialreport.visitors;
+package com.financialreport.interfaces;
 
 import com.financialreport.elements.Revenue;
 import com.financialreport.elements.Expense;

@@ -1,6 +1,6 @@
 package com.financialreport.elements;
 
-import com.financialreport.visitors.IFinancialVisitor;
+import com.financialreport.interfaces.IFinancialVisitor;
 
 public class Investment implements FinancialElement {
 

@@ -1,6 +1,7 @@
 package com.financialreport.visitors;
 
 import com.financialreport.elements.Revenue;
+import com.financialreport.interfaces.IFinancialVisitor;
 import com.financialreport.elements.Expense;
 import com.financialreport.elements.Investment;
 
