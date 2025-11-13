@@ -4,7 +4,7 @@ import observers.InvestorObserver;
 import observers.TradingBotObserver;
 import observers.NewsReporterObserver;
 
-public class StockTradingDemo {
+public class Main {
     public static void main(String[] args) {
         StockMarket market = new StockMarket();
 
@@ -59,11 +59,6 @@ public class StockTradingDemo {
 
         market.displayMarket();
 
-        System.out.println("📝 TRADING SESSION COMPLETE!");
-        System.out.println("This demo shows the Observer pattern where:");
-        System.out.println("• StockMarket is the Subject that notifies observers");
-        System.out.println("• Investors, Bots, and Reporters are Observers that react to price changes");
-        System.out.println("• Each observer can have different behavior and thresholds");
-        System.out.println("• Observers can be added/removed dynamically");
+        System.out.println("TRADING SESSION COMPLETE!");
     }
 }

@@ -21,7 +21,7 @@ public class TradingBotObserver implements StockObserver {
                 " - Change: " + String.format("%.2f", changePercent) + "%");
 
         if (changePercent > volatilityThreshold) {
-            System.out.println("⚡ [" + botName + "] HIGH VOLATILITY DETECTED! " +
+            System.out.println("[" + botName + "] HIGH VOLATILITY DETECTED! " +
                     stock.getSymbol() + " changed " + String.format("%.2f", changePercent) +
                     "% (threshold: " + volatilityThreshold + "%)");
 
